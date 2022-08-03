@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="./public/images/favicon-32x32.png"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Frontend Mentor | Advice generator app</title>
+        <link rel="stylesheet" lang="sass" href="style.scss" />
+    </head>
+    <body>
+        <main class="advice-card">
+            <h1 class="advice-card__title">
+                Advice <span id="adviceNumberContainer">#117</span>
+            </h1>
+
+            <q class="advice-card__quote" id="adviceContainer">Loading... </q>
+            <div class="advice-card__divider" aria-hidden="true"></div>
+            <button class="advice-card__generate-btn" id="adviceGenerateBtn">
+                <img
+                    src="./public/images/icon-dice.svg"
+                    alt="generate new advice"
+                />
+            </button>
+        </main>
+        <script type="module" src="/main.js"></script>
+    </body>
+</html>

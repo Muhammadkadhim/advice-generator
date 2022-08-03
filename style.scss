@@ -1,0 +1,89 @@
+@import "./common/colors";
+@import "./common/fonts";
+
+$transition: all 100ms linear;
+
+// global srtyles
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: $body-ff;
+    font-size: $body-fs;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: $color-neutral-400;
+}
+
+// generate advice card
+.advice-card {
+    width: 90%;
+    max-width: 500px;
+    background-color: darken($color-neutral-200, 15);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    padding: 1em;
+    position: relative;
+
+    &__title {
+        color: $color-primary-200;
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 4px;
+    }
+
+    &__quote {
+        color: $color-primary-100;
+        text-align: center;
+    }
+
+    &__divider {
+        width: 100%;
+        height: 20px;
+        background-image: url("./public/images/pattern-divider-mobile.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-bottom: 1.5em;
+
+        @media screen and (min-width: 50em) {
+            background-image: url("./public/images/pattern-divider-desktop.svg");
+        }
+    }
+
+    &__generate-btn {
+        all: unset;
+        width: 60px;
+        height: 60px;
+        background-color: $color-primary-200;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: -60px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        // transform: translateY(55px);
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover {
+            box-shadow: 0 0 20px 5px $color-primary-200;
+        }
+    }
+}
