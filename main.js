@@ -7,11 +7,12 @@ let adviceNumber = 1;
 function fetchAdvice() {
     adviceNumberContainer.innerText = "#" + adviceNumber;
 
-    fetch("https://api.adviceslip.com/advice")
+    fetch("https://api.adviceslip.com/advice", { cache: "no-cache" })
         .then((res) => res.json())
         .then((data) => (adviceContainer.innerText = data.slip.advice))
         .catch((err) => console.log(err));
 }
+
 // onload
 fetchAdvice();
 
